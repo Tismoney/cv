@@ -1,0 +1,283 @@
+\documentclass[11pt,a4paper,roman]{moderncv}
+
+% modern themes
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\nopagenumbers{}
+\usepackage{xcolor}
+\definecolor{bluecv}{HTML}{2B74B0}
+\definecolor{graycv}{HTML}{4D4D4D}
+
+
+\usepackage{inputenc}
+\usepackage{fontawesome}
+\usepackage{fontspec}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage[colorlinks = true,
+            linkcolor = bluecv,
+            urlcolor  = bluecv,
+            citecolor = bluecv,]{hyperref}
+
+\usepackage[scale=0.8]{geometry}
+\usepackage{multicol}
+
+
+
+\usepackage{import}
+
+\name{Nikita}{Mokrov}
+\address{Moscow, Russia, 141701}{}{}
+
+
+% \newcommand*{\customcventry}[7][.25em]{
+%   \begin{tabular}{@{}l} 
+%     {\bfseries #4}
+%   \end{tabular}
+%   \hfill% move it to the right
+%   \begin{tabular}{l@{}}
+%      {\bfseries #5}
+%   \end{tabular} \\
+%   \begin{tabular}{@{}l} 
+%     {\itshape #3}
+%   \end{tabular}
+%   \hfill% move it to the right
+%   \begin{tabular}{l@{}}
+%      {\itshape #2}
+%   \end{tabular}
+%   \ifx&#7&%
+%   \else{\\%
+%     \begin{minipage}{\maincolumnwidth}%
+%       \small#7%
+%     \end{minipage}}\fi%
+%   \par\addvspace{#1}}
+
+
+% \newcommand*{\twentyitempublic}[5]{%
+% 	&\parbox[t]{0.83\textwidth}{%
+% 		\textbf{#2}%
+% 		\\%
+% 		{\footnotesize#3}\\%
+% 		\href{#5}{\textbf{#4}}\vspace{\parsep}%
+% 	}\par\addvspace{{\footnotesize#1}}
+% 	\\
+% }
+
+
+
+% \newcommand*{\customcvproject}[4][.25em]{
+% %   \vfill\noindent
+%   \begin{tabular}{@{}l} 
+%     {\bfseries #2}
+%   \end{tabular}
+%   \hfill% move it to the right
+%   \begin{tabular}{l@{}}
+%      {\itshape #3}
+%   \end{tabular}
+%   \ifx&#4&%
+%   \else{\\%
+%     \begin{minipage}{\maincolumnwidth}%
+%       \small#4%
+%     \end{minipage}}\fi%
+%   \par\addvspace{#1}}
+
+% \newcommand*{\customcvhack}[4][.25em]{
+% %   \vfill\noindent
+%   \begin{tabular}{@{}l} 
+%     {\bfseries #2}  #3
+%   \end{tabular}
+%   \hfill% move it to the right
+%   \begin{tabular}{l@{}}
+%      {\itshape #4}
+%   \end{tabular}
+%   \par\addvspace{#1}}
+
+% \newcommand*{\customcvskill}[3][.25em]{
+% %   \vfill\noindent
+%   \begin{tabular}{@{}lc} 
+%     {\bfseries #2} & #3 \\
+%   \end{tabular}
+%   \par\addvspace{#1}}
+
+
+\newcommand*{\cvarticle}[7]{
+    \parbox[t]{0.90\textwidth}{
+    \textcolor{graycv}{\bfseries #2} ({\ithsape #3})\\
+	{\itshape #4} \\
+	{\footnotesize #5} \href{#6}{(#7)}\vspace{\parsep}
+    }&\parbox[t]{0.10\textwidth}{
+    \hfill {\itshape #1}}
+}
+
+\newcommand*{\cvpublic}[4]{
+    \parbox[t]{0.78\textwidth}{
+    {\bfseries #3} \\ {\itshape #4}
+    }&\parbox[t]{0.22\textwidth}{
+    {\hfill {\bfseries #2}}\\
+    {\strut\hfill {\itshape #1}}}
+}
+
+\newcommand*{\cvcourse}[3]{
+    \parbox[t]{0.78\textwidth}{
+    {\bfseries #2} \\ {\itshape #3}
+    }&\parbox[t]{0.22\textwidth}{
+    \hfill {\itshape #1}}
+}
+
+\newcommand*{\cvhack}[3]{
+    \parbox[t]{0.78\textwidth}{
+    {\bfseries #2} {\itshape #3}
+    }&\parbox[t]{0.22\textwidth}{
+    \hfill {\itshape #1}}
+}
+
+\setlength{\tabcolsep}{12pt}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+\vspace*{-23mm}
+
+\begin{center}
+\begin{tabular}{ c c c c }
+ \faLinkedinSquare\enspace {\href{https://www.linkedin.com/in/nmokrov/}{nmokrov}} &
+ \faEnvelopeO\enspace mokrov@frtk.ru &
+ \faGithub\enspace {\href{https://github.com/Tismoney}{tismoney}} &
+ \faMobile\enspace +7-915-149-2105\\  
+\end{tabular}
+\end{center}
+
+\section{EDUCATION}
+{\cvpublic{2015 -- 2019}
+          {Dolgoprudny, Russia}
+          {Moscow Institute of Physics and Technology}
+          {Expected Bachelor's degree: Applied mathematics and physics (GPA: 4.8/5)}}
+\section{SKILLS}
+\begin{tabular}{@{}l l} 
+    {\bfseries Hard skills} & Statistics, Machine Learning, Data Visualization\\
+    {\bfseries Tool skills} & python, LaTex, git, sklearn, numpy, pandas, pytorch, keras, gensim \\
+    {\bfseries Soft skills} & Communication, Critical Thinking, Collaboration\\
+  \end{tabular}
+
+%-------------------------------------------------------------------------------------------------%
+\section{RESEARCH INTERESTS}
+Unsupervised learning, Graphs and their application, Linear algebra, Recommender systems,\\ Collaborative filtering
+
+%-------------------------------------------------------------------------------------------------%
+\section{PUBLICATION}
+
+%{\cvarticle{Jun 2018}
+        %   {Marshakov E., Mokrov N., Ushakov R., Panov M.}
+        %   {COPA 2018}
+        %   {Parameters Estimation in Mixed Membership Stochastic Block Model and its\\ Applications in Community Detection}
+        %   {http://www.clrc.rhul.ac.uk/copa2018/COPA2018Programs.pdf}
+        %   {abstract}}
+
+{\cvarticle{Nov 2017}
+           {Mokrov N., Panov M., Gutman B.A. et al.}
+           {Complex Networks 2017}
+           {Simultaneous Matrix Diagonalization for Structural Brain Networks Classification}
+           {Complex Networks \& Their Applications VI. Studies in Computational Intelligence, Vol 689. \\Springer, Cham, pp 1261--1270}
+           {https://arxiv.org/pdf/1710.05213.pdf}
+           {paper}}
+
+{\cvarticle{Sept 2017}
+           {Mokrov N., Panov M., Gutman B.A. et al.}
+           {ITAS 2017}
+           {Dimension reduction in connectivity classification problems}
+           {Proceeding of the Information technologies and systems, Vol. 41, pp 1--7}
+           {http://itas2017.iitp.ru/media/papers/1570391567_64mOmmp.pdf}
+           {paper}}
+
+%-------------------------------------------------------------------------------------------------%
+\section{EXPERIENCE}
+
+{\cvpublic{Jul 2018 - Jan 2019}
+          {Moscow, Russia}
+          {Skolkovo Institute of Science and Technology (Skoltech)}
+          {Research Intern, Supervisor -- Maxim Panov}
+\vspace{5}
+}
+
+{\cvpublic{Jul 2018 - Jan 2019}
+          {Moscow, Russia}
+          {Diginetica}
+          {Junior Data Scientist}
+    {\begin{itemize}
+        \item Developing recommender systems using statistics, matrix factorization, DSSM
+        \item Implementation learning to rank (MLR)
+        \item Developing model for recommendation <<related>> items 
+        \item Machine learning algorithms optimization
+    \end{itemize}}
+\vspace{5}
+}
+{\cvpublic{Mar 2017 - Jul 2018}
+          {Moscow, Russia}
+          {Institute for Information Transmission Problems (IITP)}
+          {Research Intern, Research Advisor -- Maxim Panov}
+    {\begin{itemize}
+        \item Intrinsic dimension
+        \item Parameters estimation in MMSB model, its application in community detection
+        \item Classification problem with bio-medical data (\href{https://arxiv.org/pdf/1710.05213.pdf}{paper})
+    \end{itemize}}
+}
+
+%-------------------------------------------------------------------------------------------------%
+\newpage
+\section{RELEVANT COURSES}
+
+{\cvcourse{2018}
+          {Applied Statistics}
+          {Lectures of statistical modeling and machine learning by M.E. Panov}}
+          
+{\cvcourse{2016 -- 2017}
+          {Data Mining in Action}
+          {Data analysis, Machine learning and Neural networks in applied tasks}}
+          
+{\cvcourse{2016}
+          {Machine learning and Data analysis at Coursera}
+          {Mathematics, Python and Statistics for Data Analysis}}
+          
+{\cvcourse{2015 -- 2016}
+          {Intel iLab: from C to C++}
+          {Leading lectures of Intel iLab by I.R. Dedinsky}}
+
+%-------------------------------------------------------------------------------------------------%
+\section{PROJECTS}
+
+{\cvhack{Oct 2018}
+        {3d place of PicsArt}
+        {hackaton}
+{\begin{itemize}
+  \item Mobile app for likes prediction in Instagram based on similarity of pictures
+\end{itemize}}}
+
+{\cvhack{Apr 2018}
+        {Winners in two tracks of BirthHack}
+        {-- MIPT hackaton}
+{\begin{itemize}
+  \item The challenge of match prediction;
+  \item Finding solution of actual logistics problems for airlines.
+\end{itemize}}}
+
+{\cvhack{Oct 2017}
+        {Winners of myABBYYlity}
+        {-- ABBYY hackaton}
+{\begin{itemize}
+  \item MobileBot which find out a potentially dangerous points in the contracts.
+\end{itemize}}}
+
+
+      
+
+% \nocite{*}
+% \bibliographystyle{plain}
+% \bibliography{publications}
+% %-----       letter       ---------------------------------------------------------
+
+\end{document}
+
+
