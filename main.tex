@@ -8,19 +8,26 @@
 \definecolor{bluecv}{HTML}{2B74B0}
 \definecolor{graycv}{HTML}{4D4D4D}
 
+\definecolor{digi_red}{HTML}{B60B46}
+\definecolor{sk_gray}{HTML}{6E6E70}
+\definecolor{sk_green}{HTML}{9BA328}
+\definecolor{iitp_blue}{HTML}{2864AD}
+\definecolor{mipt_blue}{HTML}{2B74B0}
 
-\usepackage{inputenc}
-\usepackage{fontawesome}
-\usepackage{fontspec}
-\usepackage{tabularx}
-\usepackage{ragged2e}
+\newcommand{\logoSk}{\textcolor{sk_gray}{Skol}\textcolor{sk_green}{tech}}
+\newcommand{\logoDigi}{\textcolor{digi_red}{DIGI}NETICA}
+\newcommand{\logoIITP}{\textcolor{iitp_blue}{IITP (RAS)}}
+\newcommand{\logoMIPT}{\textcolor{mipt_blue}{MIPT}}
+
+
+% \usepackage{hyperref}
+% \usepackage{fontawesome}
 \usepackage[colorlinks = true,
             linkcolor = bluecv,
             urlcolor  = bluecv,
             citecolor = bluecv,]{hyperref}
 
 \usepackage[scale=0.8]{geometry}
-\usepackage{multicol}
 
 \name{Nikita}{Mokrov}
 \address{Moscow, Russia, 141701}{}{}
@@ -34,13 +41,21 @@
     \hfill {\itshape #1}}
 }
 
-\newcommand*{\cvpublic}[4]{
-    \parbox[t]{0.78\textwidth}{
-    {\bfseries #3} \\ {\itshape #4}
-    }&\parbox[t]{0.22\textwidth}{
-    {\hfill {\bfseries #2}}\\
-    {\strut\hfill {\itshape #1}}}
+\newcommand*{\cvpublic}[5]{
+    \parbox[t]{0.22\textwidth}{\bfseries #1}
+    &\parbox[t]{0.56\textwidth}{\centering \bfseries #2}
+    &\parbox[t]{0.22\textwidth}{\hfill {\bfseries #3}}
+    \\ \parbox[t]{0.78\textwidth}{\itshape #4}
+    &\parbox[t]{0.22\textwidth}{\hfill {\itshape #5}}
 }
+
+% \newcommand*{\cvpublic}[4]{
+%     \parbox[t]{0.78\textwidth}{
+%     {\bfseries #3} \\ {\itshape #4}
+%     }&\parbox[t]{0.22\textwidth}{
+%     {\hfill {\bfseries #2}}\\
+%     {\strut\hfill {\itshape #1}}}
+% }
 
 \newcommand*{\cvcourse}[3]{
     \parbox[t]{0.78\textwidth}{
@@ -75,59 +90,23 @@
 \end{tabular}
 \end{center}
 %-------------------------------------------------------------------------------------------------%
-\section{EXPERIENCE}
-
-{\cvpublic{Jul 2018 - present}
-          {Moscow, Russia}
-          {Skolkovo Institute of Science and Technology (Skoltech)}
-          {Research Intern, Supervisor -- Maxim Panov}
-    {\begin{itemize}
-        \item Uncertainty estimation in deep learning
-        \item Active learning with neural networks
-        \item Intrinsic dimension (\href{https://arxiv.org/abs/1904.06151}{paper})
-    \end{itemize}}
-\vspace{5}
-}
-
-{\cvpublic{Jul 2018 - Jan 2019}
-          {Moscow, Russia}
-          {Diginetica}
-          {Junior Data Scientist}
-    {\begin{itemize}
-        \item Developing recommender systems using statistics, matrix factorization, DSSM
-        % \item Implementation learning to rank (MLR)
-        \item Developing model for recommendation <<related>> items 
-        \item Machine learning algorithms optimization
-    \end{itemize}}
-\vspace{5}
-}
-{\cvpublic{Mar 2017 - Jul 2018}
-          {Moscow, Russia}
-          {Institute for Information Transmission Problems (IITP)}
-          {Research Intern, Research Advisor -- Maxim Panov}
-    {\begin{itemize}
-        \item Parameters estimation in MMSB model, its application in community detection
-        \item Classification problem with bio-medical data (\href{https://arxiv.org/pdf/1710.05213.pdf}{paper})
-    \end{itemize}}
-}
 %-------------------------------------------------------------------------------------------------%
 
 \section{EDUCATION}
-
-{\cvpublic{2019 -- present}
+{\cvpublic{\logoSk ~\textcolor{graycv}{\&} \logoMIPT}
+          {Skolkovo Institute of Science and Technology \&
+          Moscow Institute of Physics and Technology}
           {Moscow, Russia}
-          {Skolkovo Institute of Science and Technology (Skoltech)}
-          {Master's degree: Data Science}}
+          {Master's degree: Data Science (Network program)}
+          {2019 -- present}
+\vspace{-7.5}}
 
-{\cvpublic{2019 -- present}
-          {Dolgoprudny, Russia}
+{\cvpublic{\logoMIPT}
           {Moscow Institute of Physics and Technology}
-          {Master's degree: Applied mathematics and physics}}
-
-{\cvpublic{2015 -- 2019}
           {Dolgoprudny, Russia}
-          {Moscow Institute of Physics and Technology}
-          {Bachelor's degree: Applied mathematics and physics (GPA: 4.8/5)}}
+          {Bachelor's degree: Applied mathematics and physics (GPA 4.8/5)}
+          {2015 -- 2019}
+\vspace{-15}}
 %-------------------------------------------------------------------------------------------------%
 \section{SKILLS}
 \begin{tabular}{@{}l l} 
@@ -135,28 +114,54 @@
     {\bfseries Tool skills} & python, LaTex, git, SQL, sklearn, numpy, pandas, pytorch \\
     {\bfseries Soft skills} & Communication, Critical Thinking, Collaboration\\
   \end{tabular}
-
 %-------------------------------------------------------------------------------------------------%
-\section{RESEARCH INTERESTS}
-Unsupervised learning, Graphs and their application, Linear algebra, Recommender systems,\\ Collaborative filtering
+
+\section{EXPERIENCE}
+{\cvpublic{\logoSk}
+          {Skolkovo Institute of Science and Technology}
+          {Moscow, Russia}
+          {Research Intern, Supervisor -- Maxim Panov}
+          {Jul 2018 - present}
+    {\begin{itemize}
+        \item Uncertainty quantification in neural networks using Dropout
+        \item Intrinsic dimension (\href{https://arxiv.org/abs/1904.06151}{paper})
+    \end{itemize}}
+ \vspace{5}}
+ 
+{\cvpublic{\logoDigi}
+          {Diginetica}
+          {Moscow, Russia}
+          {Junior Data Scientist}
+          {Jul 2018 - Jan 2019}
+    {\begin{itemize}
+        \item Developing recommender systems using statistics, matrix factorization, DSSM
+        % \item Implementation learning to rank (MLR)
+        \item Developing model for recommendation <<related>> items 
+        \item Machine learning algorithms optimization
+    \end{itemize}}
+\vspace{5}}
+
+{\cvpublic{\logoIITP}
+          {Institute for Information Transmission Problems}
+          {Moscow, Russia}
+          {Research Intern, Research Advisor -- Maxim Panov}
+          {Mar 2017 - Jul 2018}
+    {\begin{itemize}
+        \item Parameters estimation in MMSB model, its application in community detection
+        \item Classification problem with bio-medical data (\href{https://arxiv.org/pdf/1710.05213.pdf}{paper})
+    \end{itemize}}
+}
 
 %-------------------------------------------------------------------------------------------------%
 \section{PUBLICATION}
 
-%{\cvarticle{Jun 2018}
-        %   {Marshakov E., Mokrov N., Ushakov R., Panov M.}
-        %   {COPA 2018}
-        %   {Parameters Estimation in Mixed Membership Stochastic Block Model and its\\ Applications in Community Detection}
-        %   {http://www.clrc.rhul.ac.uk/copa2018/COPA2018Programs.pdf}
-        %   {abstract}}
-
 {\cvarticle{Apr 2019}
            {Gomtsyan M., Mokrov N., Panov M. and Yanovich Y.}
-           {arXiv}
+           {ACML 2019*}
            {Geometry-Aware Maximum Likelihood Estimation of Intrinsic Dimension}
-           {arXiv preprint}
+           {Accepted to Asian Conference on Machine Learning 2019}
            {https://arxiv.org/abs/1904.06151}
-           {paper}}
+           {arXiv preprint}}
 
 {\cvarticle{Nov 2017}
            {Mokrov N., Panov M., Gutman B.A. et al.}
@@ -174,7 +179,9 @@ Unsupervised learning, Graphs and their application, Linear algebra, Recommender
            {http://itas2017.iitp.ru/media/papers/1570391567_64mOmmp.pdf}
            {paper}}
 
-
+%-------------------------------------------------------------------------------------------------%
+\section{RESEARCH INTERESTS}
+Unsupervised learning, Graphs and their application, Linear algebra, Recommender systems,\\ Collaborative filtering
 %-------------------------------------------------------------------------------------------------%
 \section{RELEVANT COURSES}
 
