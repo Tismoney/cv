@@ -1,9 +1,15 @@
+%-------------------------------------------------%
+%                 Main style
+%-------------------------------------------------%
 \documentclass[11pt,a4paper,roman]{moderncv}
-
-% modern themes
 \moderncvstyle{banking}
 \moderncvcolor{blue}
 \nopagenumbers{}
+\usepackage[scale=0.8]{geometry}
+\setlength{\tabcolsep}{12pt}
+%-------------------------------------------------%
+%                 Colors & Logos
+%-------------------------------------------------%
 \usepackage{xcolor}
 \definecolor{bluecv}{HTML}{2B74B0}
 \definecolor{graycv}{HTML}{4D4D4D}
@@ -19,15 +25,20 @@
 \newcommand{\logoIITP}{\textcolor{iitp_blue}{IITP (RAS)}}
 \newcommand{\logoMIPT}{\textcolor{mipt_blue}{MIPT}}
 
+%-------------------------------------------------%
+%                 Links
+%-------------------------------------------------%
+\usepackage{fontawesome}
+\DeclareFontFamily{U}{fontawesomeOne}{}
+\DeclareFontShape{U}{fontawesomeOne}{m}{n}
+  {<-> FontAwesome--fontawesomeone}{}
+\DeclareRobustCommand\FAone{\fontencoding{U}\fontfamily{fontawesomeOne}\selectfont} 
 
-% \usepackage{hyperref}
-% \usepackage{fontawesome}
 \usepackage[colorlinks = true,
             linkcolor = bluecv,
             urlcolor  = bluecv,
             citecolor = bluecv,]{hyperref}
 
-\usepackage[scale=0.8]{geometry}
 
 \name{Nikita}{Mokrov}
 \address{Moscow, Russia, 141701}{}{}
@@ -49,12 +60,12 @@
     &\parbox[t]{0.22\textwidth}{\hfill {\itshape #5}}
 }
 
-% \newcommand*{\cvpublic}[4]{
-%     \parbox[t]{0.78\textwidth}{
-%     {\bfseries #3} \\ {\itshape #4}
-%     }&\parbox[t]{0.22\textwidth}{
-%     {\hfill {\bfseries #2}}\\
-%     {\strut\hfill {\itshape #1}}}
+% \newcommand*{\cvpublic}[5]{
+%     \parbox[t]{0.20\textwidth}{\bfseries #1}
+%     &\parbox[t]{0.56\textwidth}{\centering \bfseries #2}
+%     &\parbox[t]{0.24\textwidth}{\textcolor{graycv}{\scriptsize \faMapMarker} \hfill {\bfseries #3}}
+%     \\ \parbox[t]{0.76\textwidth}{\itshape #4}
+%     &\parbox[t]{0.24\textwidth}{\textcolor{graycv}{\scriptsize \faCalendar} \hfill {\itshape #5}}
 % }
 
 \newcommand*{\cvcourse}[3]{
@@ -71,13 +82,14 @@
     \hfill {\itshape #1}}
 }
 
-\setlength{\tabcolsep}{12pt}
 
-%----------------------------------------------------------------------------------
-%            content
-%----------------------------------------------------------------------------------
+%-------------------------------------------------%
+%                 Content
+%-------------------------------------------------%
 \begin{document}
-%-----       resume       ---------------------------------------------------------
+%-------------------------------------------------%
+%                 General Info
+%-------------------------------------------------%
 \makecvtitle
 \vspace*{-23mm}
 
@@ -89,164 +101,150 @@
  \faMobile\enspace +7-915-149-2105\\  
 \end{tabular}
 \end{center}
-%-------------------------------------------------------------------------------------------------%
-%-------------------------------------------------------------------------------------------------%
+%-------------------------------------------------%
+%                 Education
+%-------------------------------------------------%
+\section{\faGraduationCap~EDUCATION}
 
-\section{EDUCATION}
-{\cvpublic{\logoSk ~\textcolor{graycv}{\&} \logoMIPT}
+\cvpublic{\logoSk ~\textcolor{graycv}{\&} \logoMIPT}
           {Skolkovo Institute of Science and Technology \&
           Moscow Institute of Physics and Technology}
           {Moscow, Russia}
           {Master's degree: Data Science (Network program)}
           {2019 -- present}
-\vspace{-7.5}}
-
-{\cvpublic{\logoMIPT}
+\cvpublic{\logoMIPT}
           {Moscow Institute of Physics and Technology}
           {Dolgoprudny, Russia}
           {Bachelor's degree: Applied mathematics and physics (GPA 4.8/5)}
           {2015 -- 2019}
-\vspace{-15}}
-%-------------------------------------------------------------------------------------------------%
-\section{SKILLS}
+\vspace{-15}
+%-------------------------------------------------%
+%                 Skills
+%-------------------------------------------------%
+\section{\faCogs~SKILLS}
 \begin{tabular}{@{}l l} 
     {\bfseries Hard skills} & Statistics, Machine Learning, Data Visualization\\
-    {\bfseries Tool skills} & python, LaTex, git, SQL, sklearn, numpy, pandas, pytorch \\
+    {\bfseries Tool skills} & git, LaTex, python, SQL, sklearn, numpy, pandas, pytorch, Adobe Photoshop\\
     {\bfseries Soft skills} & Communication, Critical Thinking, Collaboration\\
   \end{tabular}
-%-------------------------------------------------------------------------------------------------%
-
-\section{EXPERIENCE}
-{\cvpublic{\logoSk}
+%-------------------------------------------------%
+%                 Experience
+%-------------------------------------------------%
+\section{\faSuitcase~EXPERIENCE}
+\cvpublic{\logoSk}
           {Skolkovo Institute of Science and Technology}
           {Moscow, Russia}
           {Research Intern, Supervisor -- Maxim Panov}
           {Jul 2018 - present}
-    {\begin{itemize}
-        \item Uncertainty quantification in neural networks using Dropout
-        \item Intrinsic dimension (\href{https://arxiv.org/abs/1904.06151}{paper})
-    \end{itemize}}
- \vspace{5}}
- 
-{\cvpublic{\logoDigi}
+\begin{itemize}
+    \item Uncertainty estimation in neural networks using Dropout
+    \item Intrinsic dimension (\href{https://arxiv.org/abs/1904.06151}{paper})
+\end{itemize}
+\vspace{5}
+\cvpublic{\logoDigi}
           {Diginetica}
           {Moscow, Russia}
           {Junior Data Scientist}
           {Jul 2018 - Jan 2019}
-    {\begin{itemize}
-        \item Developing recommender systems using statistics, matrix factorization, DSSM
-        % \item Implementation learning to rank (MLR)
-        \item Developing model for recommendation <<related>> items 
-        \item Machine learning algorithms optimization
-    \end{itemize}}
-\vspace{5}}
+\begin{itemize}
+    \item Developing recommender systems using statistics, matrix factorization, DSSM
+    \item Developing model for recommendation <<related>> items 
+    \item Machine learning algorithms optimization
+\end{itemize}
+\vspace{5}
 
-{\cvpublic{\logoIITP}
+\cvpublic{\logoIITP}
           {Institute for Information Transmission Problems}
           {Moscow, Russia}
           {Research Intern, Research Advisor -- Maxim Panov}
           {Mar 2017 - Jul 2018}
-    {\begin{itemize}
-        \item Parameters estimation in MMSB model, its application in community detection
-        \item Classification problem with bio-medical data (\href{https://arxiv.org/pdf/1710.05213.pdf}{paper})
-    \end{itemize}}
-}
-
-%-------------------------------------------------------------------------------------------------%
-\section{PUBLICATION}
-
-{\cvarticle{Apr 2019}
+\begin{itemize}
+    \item Parameters estimation in MMSB model, its application in community detection
+    \item Classification problem with bio-medical data (\href{https://arxiv.org/pdf/1710.05213.pdf}{paper})
+\end{itemize}
+%-------------------------------------------------%
+%                 Publication
+%-------------------------------------------------%
+\section{\faBook~PUBLICATION}
+\cvarticle{Apr 2019}
            {Gomtsyan M., Mokrov N., Panov M. and Yanovich Y.}
            {ACML 2019*}
            {Geometry-Aware Maximum Likelihood Estimation of Intrinsic Dimension}
            {Accepted to Asian Conference on Machine Learning 2019}
            {https://arxiv.org/abs/1904.06151}
-           {arXiv preprint}}
-
-{\cvarticle{Nov 2017}
+           {arXiv preprint}
+           
+\cvarticle{Nov 2017}
            {Mokrov N., Panov M., Gutman B.A. et al.}
            {Complex Networks 2017}
            {Simultaneous Matrix Diagonalization for Structural Brain Networks Classification}
            {Complex Networks \& Their Applications VI. Studies in Computational Intelligence, Vol 689. \\Springer, Cham, pp 1261--1270}
            {https://arxiv.org/pdf/1710.05213.pdf}
-           {paper}}
-
-{\cvarticle{Sept 2017}
+           {paper}
+           
+\cvarticle{Sept 2017}
            {Mokrov N., Panov M., Gutman B.A. et al.}
            {ITAS 2017}
            {Dimension reduction in connectivity classification problems}
            {Proceeding of the Information technologies and systems, Vol. 41, pp 1--7}
            {http://itas2017.iitp.ru/media/papers/1570391567_64mOmmp.pdf}
-           {paper}}
-
-%-------------------------------------------------------------------------------------------------%
-\section{RESEARCH INTERESTS}
-Unsupervised learning, Graphs and their application, Linear algebra, Recommender systems,\\ Collaborative filtering
-%-------------------------------------------------------------------------------------------------%
-\section{RELEVANT COURSES}
-
-{\cvcourse{2019}
+           {paper}
+%-------------------------------------------------%
+%                 Interests
+%-------------------------------------------------%
+\section{\faStreetView~RESEARCH INTERESTS}
+Unsupervised learning, Graphs and their application, Linear algebra, Recommender systems,\\ Collaborative filtering, Graph neural networks
+%-------------------------------------------------%
+%                 Courses
+%-------------------------------------------------%
+\section{\faCertificate~RELEVANT COURSES}
+\cvcourse{2019}
           {Building Recommender Systems with Machine Learning and AI at Udemy}
-          {Recommender systems with deep learning and machine learning by Frank Kane}}
+          {Recommender systems with deep learning and machine learning by Frank Kane}
           
-{\cvcourse{2018}
+\cvcourse{2018}
           {Applied Statistics}
-          {Lectures of statistical modeling and machine learning by M.E. Panov}}
+          {Lectures of statistical modeling and machine learning by M.E. Panov}
           
-{\cvcourse{2016 -- 2017}
+\cvcourse{2016 -- 2017}
           {Data Mining in Action}
-          {Data analysis, Machine learning and Neural networks in applied tasks}}
+          {Data analysis, Machine learning and Neural networks in applied tasks}
           
-{\cvcourse{2016}
+\cvcourse{2016}
           {Machine learning and Data analysis at Coursera}
-          {Mathematics, Python and Statistics for Data Analysis}}
+          {Mathematics, Python and Statistics for Data Analysis}
           
-{\cvcourse{2015 -- 2016}
+\cvcourse{2015 -- 2016}
           {Intel iLab: from C to C++}
-          {Leading lectures of Intel iLab by I.R. Dedinsky}}
-
-%-------------------------------------------------------------------------------------------------%
-% \section{TEACHING PRACTICE}
-% {\cvcourse{2018}
-%           {Deep Learning School}
-%           {Intro seminars of python and machine learning libraries.\\ Classical ml algorithms: liner models and k-nearest neighbors}}
-
-% {\cvcourse{2016-2017}
-%           {Evening Physical and Technical School at MIPT}
-%           {Algebra and geometry workshops for $10^{th}$ graders}}
-
-%-------------------------------------------------------------------------------------------------%
-\section{PROJECTS}
-
-{\cvhack{Oct 2018}
+          {Leading lectures of Intel iLab by I.R. Dedinsky}
+%-------------------------------------------------%
+%                 Projects
+%-------------------------------------------------%
+\section{\faRocket~PROJECTS}
+\cvhack{Oct 2018}
         {3d place of PicsArt}
         {hackaton}
-{\begin{itemize}
-  \item Mobile app for likes prediction in Instagram based on similarity of pictures
-\end{itemize}}}
+\begin{itemize}
+    \item Mobile app for likes prediction in Instagram based on similarity of pictures
+\end{itemize}
 
-{\cvhack{Apr 2018}
+\cvhack{Apr 2018}
         {Winners in two tracks of BirthHack}
         {-- MIPT hackaton}
-{\begin{itemize}
-  \item The challenge of match prediction;
-  \item Finding solution of actual logistics problems for airlines.
-\end{itemize}}}
+\begin{itemize}
+    \item The challenge of match prediction;
+    \item Finding solution of actual logistics problems for airlines.
+\end{itemize}
 
-{\cvhack{Oct 2017}
+\cvhack{Oct 2017}
         {Winners of myABBYYlity}
         {-- ABBYY hackaton}
-{\begin{itemize}
-  \item MobileBot which find out a potentially dangerous points in the contracts.
-\end{itemize}}}
-
-
-
-% \nocite{*}
-% \bibliographystyle{plain}
-% \bibliography{publications}
-% %-----       letter       ---------------------------------------------------------
-
+\begin{itemize}
+    \item MobileBot which find out a potentially dangerous points in the contracts.
+\end{itemize}
+%-------------------------------------------------%
+%                 End
+%-------------------------------------------------%
 \end{document}
 
 
