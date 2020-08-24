@@ -2,11 +2,14 @@
 %                 Main style
 %-------------------------------------------------%
 \documentclass[11pt,a4paper,roman]{moderncv}
+
 \moderncvstyle{banking}
 \moderncvcolor{blue}
 \nopagenumbers{}
 \usepackage[scale=0.8]{geometry}
 \setlength{\tabcolsep}{12pt}
+
+
 %-------------------------------------------------%
 %                 Colors & Logos
 %-------------------------------------------------%
@@ -14,12 +17,14 @@
 \definecolor{bluecv}{HTML}{2B74B0}
 \definecolor{graycv}{HTML}{4D4D4D}
 
-\definecolor{digi_red}{HTML}{B60B46}
+\definecolor{ozon_blue}{HTML}{0054E0}
 \definecolor{sk_gray}{HTML}{6E6E70}
 \definecolor{sk_green}{HTML}{9BA328}
+\definecolor{digi_red}{HTML}{B60B46}
 \definecolor{iitp_blue}{HTML}{2864AD}
 \definecolor{mipt_blue}{HTML}{2B74B0}
 
+\newcommand{\logoOzon}{\textcolor{ozon_blue}{OZON}}
 \newcommand{\logoSk}{\textcolor{sk_gray}{Skol}\textcolor{sk_green}{tech}}
 \newcommand{\logoDigi}{\textcolor{digi_red}{DIGI}NETICA}
 \newcommand{\logoIITP}{\textcolor{iitp_blue}{IITP (RAS)}}
@@ -37,55 +42,56 @@
 \usepackage[colorlinks = true,
             linkcolor = bluecv,
             urlcolor  = bluecv,
-            citecolor = bluecv,]{hyperref}
+            citecolor = bluecv]{hyperref}
 
 
-\name{Nikita}{Mokrov}
-\address{Moscow, Russia, 141701}{}{}
+
+%-------------------------------------------------%
+%                 Commands
+%-------------------------------------------------%
 
 \newcommand*{\cvarticle}[7]{
-    \parbox[t]{0.90\textwidth}{
-    \textcolor{graycv}{\bfseries #2} ({\ithsape #3})\\
-	{\itshape #4} \\
-	{\footnotesize #5} \href{#6}{(#7)}\vspace{\parsep}
-    }&\parbox[t]{0.10\textwidth}{
+    \parbox[t]{0.90\textwidth}
+    {
+        \textcolor{graycv}{\bfseries #2} ({\ithsape #3})\\
+	    {\itshape #4} \\
+    	{\footnotesize #5} \href{#6}{(#7)} \vspace{\parsep}
+    }
+    \parbox[t]{0.10\textwidth}{
     \hfill {\itshape #1}}
 }
 
 \newcommand*{\cvpublic}[5]{
     \parbox[t]{0.22\textwidth}{\bfseries #1}
-    &\parbox[t]{0.56\textwidth}{\centering \bfseries #2}
-    &\parbox[t]{0.22\textwidth}{\hfill {\bfseries #3}}
+    \parbox[t]{0.56\textwidth}{\centering \bfseries #2}
+    \parbox[t]{0.22\textwidth}{\hfill {\bfseries #3}}
     \\ \parbox[t]{0.78\textwidth}{\itshape #4}
-    &\parbox[t]{0.22\textwidth}{\hfill {\itshape #5}}
+    \parbox[t]{0.22\textwidth}{\hfill {\itshape #5}}
 }
-
-% \newcommand*{\cvpublic}[5]{
-%     \parbox[t]{0.20\textwidth}{\bfseries #1}
-%     &\parbox[t]{0.56\textwidth}{\centering \bfseries #2}
-%     &\parbox[t]{0.24\textwidth}{\textcolor{graycv}{\scriptsize \faMapMarker} \hfill {\bfseries #3}}
-%     \\ \parbox[t]{0.76\textwidth}{\itshape #4}
-%     &\parbox[t]{0.24\textwidth}{\textcolor{graycv}{\scriptsize \faCalendar} \hfill {\itshape #5}}
-% }
 
 \newcommand*{\cvcourse}[3]{
     \parbox[t]{0.78\textwidth}{
-    {\bfseries #2} \\ {\itshape #3}
-    }&\parbox[t]{0.22\textwidth}{
+        {\bfseries #2} \\ {\itshape #3}
+    }
+    \parbox[t]{0.22\textwidth}{
     \hfill {\itshape #1}}
 }
 
 \newcommand*{\cvhack}[3]{
     \parbox[t]{0.78\textwidth}{
-    {\bfseries #2} {\itshape #3}
-    }&\parbox[t]{0.22\textwidth}{
+        {\bfseries #2} {\itshape #3}
+    }
+    \parbox[t]{0.22\textwidth}{
     \hfill {\itshape #1}}
 }
-
 
 %-------------------------------------------------%
 %                 Content
 %-------------------------------------------------%
+\name{Nikita}{Mokrov}
+\address{Moscow, Russia, 141701}{}{}
+
+
 \begin{document}
 %-------------------------------------------------%
 %                 General Info
@@ -96,7 +102,7 @@
 \begin{center}
 \begin{tabular}{ c c c c }
  \faLinkedinSquare\enspace {\href{https://www.linkedin.com/in/nmokrov/}{nmokrov}} &
- \faEnvelopeO\enspace mokrov@frtk.ru &
+ \faEnvelopeO\enspace mokrov.ns@phystech.edu &
  \faGithub\enspace {\href{https://github.com/Tismoney}{tismoney}} &
  \faMobile\enspace +7-915-149-2105\\  
 \end{tabular}
@@ -107,51 +113,65 @@
 \section{\faGraduationCap~EDUCATION}
 
 \cvpublic{\logoSk ~\textcolor{graycv}{\&} \logoMIPT}
-          {Skolkovo Institute of Science and Technology \&
-          Moscow Institute of Physics and Technology}
-          {Moscow, Russia}
-          {Master's degree: Data Science (Network program)}
-          {2019 -- present}
+    {Skolkovo Institute of Science and Technology \& Moscow Institute of Physics and Technology}
+    {Moscow, Russia}
+    {Master's degree: Data Science (Network program)}
+    {2019 -- 2021}
 \cvpublic{\logoMIPT}
-          {Moscow Institute of Physics and Technology}
-          {Dolgoprudny, Russia}
-          {Bachelor's degree: Applied mathematics and physics (GPA 4.8/5)}
-          {2015 -- 2019}
-\vspace{-15}
+    {Moscow Institute of Physics and Technology}
+    {Dolgoprudny, Russia}
+    {Bachelor's degree: Applied mathematics and physics (GPA 4.8/5)}
+    {2015 -- 2019}
+\vspace{-15pt}
 %-------------------------------------------------%
 %                 Skills
 %-------------------------------------------------%
 \section{\faCogs~SKILLS}
 \begin{tabular}{@{}l l} 
-    {\bfseries Hard skills} & Statistics, Machine Learning, Data Visualization\\
-    {\bfseries Tool skills} & git, LaTex, python, SQL, sklearn, numpy, pandas, pytorch, Adobe Photoshop\\
-    {\bfseries Soft skills} & Communication, Critical Thinking, Collaboration\\
+    \bfseries{Hard skills} & Statistics, Machine Learning, Data Visualization\\
+    \bfseries{Tool skills} & Python, git, LaTex, Airflow, PostgreSQL, Adobe Photoshop\\
+    \bfseries{Data science} & PyTorch, Tensorflow, XGBoost, LightGBM, CatBoost, PySpark, \\
+     & implicit, LightFM, fastFM, sklearn, numpy, pandas, streamlit\\
+    \bfseries{Soft skills} & Communication, Critical Thinking, Collaboration\\
   \end{tabular}
 %-------------------------------------------------%
 %                 Experience
 %-------------------------------------------------%
 \section{\faSuitcase~EXPERIENCE}
+
+\cvpublic{\logoOzon}
+          {Ozon, Technology}
+          {Moscow, Russia}
+          {Data Science Intern}
+          {Apr 2020 - present}
+\begin{itemize}
+    \item Made explainer for ranking algorithms;
+    \item Improved ranking algorithm's quality;
+\end{itemize}
+\vspace{5pt}
 \cvpublic{\logoSk}
           {Skolkovo Institute of Science and Technology}
           {Moscow, Russia}
           {Research Intern, Supervisor -- Maxim Panov}
           {Jul 2018 - present}
 \begin{itemize}
-    \item Uncertainty estimation in neural networks using Dropout
-    \item Intrinsic dimension (\href{https://arxiv.org/abs/1904.06151}{paper})
+    \item Made good Deep Graph Embeddings using nonrivial losses;
+    \item Improved quality of recommender systems using Graph Neural Network (GNN);
+    \item Improved uncertainty estimation in neural networks using Dropout via diversity sampled implicit ensembles (\href{https://arxiv.org/abs/2003.03274}{paper}) (partial participation);
+    \item New state-of-the-art approach for intrinsic dimension problem: GeoMLE (\href{https://arxiv.org/abs/1904.06151}{paper})
 \end{itemize}
-\vspace{5}
+\vspace{5pt}
 \cvpublic{\logoDigi}
           {Diginetica}
           {Moscow, Russia}
           {Junior Data Scientist}
           {Jul 2018 - Jan 2019}
 \begin{itemize}
-    \item Developing recommender systems using statistics, matrix factorization, DSSM
-    \item Developing model for recommendation <<related>> items 
-    \item Machine learning algorithms optimization
+    \item Developing recommender systems using statistics, matrix factorization and DSSM approaches;
+    \item Developing model for recommendation <<related>> items; 
+    \item Machine learning algorithms optimization.
 \end{itemize}
-\vspace{5}
+\vspace{5pt}
 
 \cvpublic{\logoIITP}
           {Institute for Information Transmission Problems}
@@ -159,20 +179,91 @@
           {Research Intern, Research Advisor -- Maxim Panov}
           {Mar 2017 - Jul 2018}
 \begin{itemize}
-    \item Parameters estimation in MMSB model, its application in community detection
+    \item Parameters estimation in MMSB model, its application in community detection;
     \item Classification problem with bio-medical data (\href{https://arxiv.org/pdf/1710.05213.pdf}{paper})
 \end{itemize}
+%-------------------------------------------------%
+%                 Projects
+%-------------------------------------------------%
+\section{\faRocket~PROJECTS}
+
+\cvhack{Aug 2020}
+       {Making recommender engine for \href{https://ffmemes.com}{Fast Food Memes}}
+       { -- telegram bot}
+\begin{itemize}
+    \item Create a personal real-time meme recommendation feed
+\end{itemize}
+
+\cvhack{Oct 2018}
+        {3d place of \href{https://www.picsart.ai/winners}{PicsArt}}
+        {hackaton}
+\begin{itemize}
+    \item Mobile app for likes prediction in Instagram based on similarity of pictures
+\end{itemize}
+
+\cvhack{Apr 2018}
+        {Winners in two tracks of \href{https://github.com/HackFactory/BirthHack}{BirthHack}}
+        {-- MIPT hackaton}
+\begin{itemize}
+    \item The challenge of WorldCup 2018 match predictions;
+    \item Finding solution of actual logistics problems for S7 airlines.
+\end{itemize}
+
+\cvhack{Oct 2017}
+        {Winners of \href{https://vk.com/mabbyylity?w=wall-152623487_85}{mABBYYlity}}
+        {-- ABBYY hackaton}
+\begin{itemize}
+    \item MobileBot which find out a potentially dangerous points in the contracts.
+\end{itemize}
+%-------------------------------------------------%
+%                 Courses
+%-------------------------------------------------%
+\section{\faCertificate~RELEVANT COURSES}
+
+\cvcourse{2020}
+          {Deep Learning at Skoltech}
+          {New generation of neural network-based methods related to computer vision, speech recognition, natural language analysis and etc. by V. Lempitsky}
+          
+\cvcourse{2019}
+          {Numerical Linear Algebra at Skoltech (\href{http://nla.skoltech.ru}{course page})}
+          {Course about basic numerical linear algebra algorithms and ideas by I. Oseledets}
+          
+\cvcourse{2019}
+          {Building Recommender Systems with Machine Learning and AI at Udemy}
+          {Recommender systems with deep learning and machine learning by Frank Kane}
+          
+\cvcourse{2018}
+          {Applied Statistics at MIPT}
+          {Lectures of statistical modeling and machine learning by M. Panov}
+          
+\cvcourse{2016 -- 2017}
+          {Data Mining in Action}
+          {Data analysis, Machine learning and Neural networks in applied tasks}
+          
+\cvcourse{2016}
+          {Machine learning and Data analysis at Coursera}
+          {Mathematics, Python and Statistics for Data Analysis}
+          
+\cvcourse{2015 -- 2016}
+          {Intel iLab: from C to C++}
+          {Leading lectures of Intel iLab by I.R. Dedinsky}
+
+%-------------------------------------------------%
+%                 Interests
+%-------------------------------------------------%
+\section{\faStreetView~RESEARCH INTERESTS}
+Unsupervised learning, Graphs and their application, Linear algebra, Recommender systems,\\ Collaborative filtering, Graph neural networks
 %-------------------------------------------------%
 %                 Publication
 %-------------------------------------------------%
 \section{\faBook~PUBLICATION}
 \cvarticle{Apr 2019}
            {Gomtsyan M., Mokrov N., Panov M. and Yanovich Y.}
-           {ACML 2019*}
+           {ACML 2019}
            {Geometry-Aware Maximum Likelihood Estimation of Intrinsic Dimension}
-           {Accepted to Asian Conference on Machine Learning 2019}
-           {https://arxiv.org/abs/1904.06151}
-           {arXiv preprint}
+           {Proceeding of Asian Conference on Machine Learning 2019}
+           {http://proceedings.mlr.press/v101/gomtsyan19a/gomtsyan19a.pdf}
+           {paper}
            
 \cvarticle{Nov 2017}
            {Mokrov N., Panov M., Gutman B.A. et al.}
@@ -189,59 +280,6 @@
            {Proceeding of the Information technologies and systems, Vol. 41, pp 1--7}
            {http://itas2017.iitp.ru/media/papers/1570391567_64mOmmp.pdf}
            {paper}
-%-------------------------------------------------%
-%                 Interests
-%-------------------------------------------------%
-\section{\faStreetView~RESEARCH INTERESTS}
-Unsupervised learning, Graphs and their application, Linear algebra, Recommender systems,\\ Collaborative filtering, Graph neural networks
-%-------------------------------------------------%
-%                 Courses
-%-------------------------------------------------%
-\section{\faCertificate~RELEVANT COURSES}
-\cvcourse{2019}
-          {Building Recommender Systems with Machine Learning and AI at Udemy}
-          {Recommender systems with deep learning and machine learning by Frank Kane}
-          
-\cvcourse{2018}
-          {Applied Statistics}
-          {Lectures of statistical modeling and machine learning by M.E. Panov}
-          
-\cvcourse{2016 -- 2017}
-          {Data Mining in Action}
-          {Data analysis, Machine learning and Neural networks in applied tasks}
-          
-\cvcourse{2016}
-          {Machine learning and Data analysis at Coursera}
-          {Mathematics, Python and Statistics for Data Analysis}
-          
-\cvcourse{2015 -- 2016}
-          {Intel iLab: from C to C++}
-          {Leading lectures of Intel iLab by I.R. Dedinsky}
-%-------------------------------------------------%
-%                 Projects
-%-------------------------------------------------%
-\section{\faRocket~PROJECTS}
-\cvhack{Oct 2018}
-        {3d place of PicsArt}
-        {hackaton}
-\begin{itemize}
-    \item Mobile app for likes prediction in Instagram based on similarity of pictures
-\end{itemize}
-
-\cvhack{Apr 2018}
-        {Winners in two tracks of BirthHack}
-        {-- MIPT hackaton}
-\begin{itemize}
-    \item The challenge of match prediction;
-    \item Finding solution of actual logistics problems for airlines.
-\end{itemize}
-
-\cvhack{Oct 2017}
-        {Winners of myABBYYlity}
-        {-- ABBYY hackaton}
-\begin{itemize}
-    \item MobileBot which find out a potentially dangerous points in the contracts.
-\end{itemize}
 %-------------------------------------------------%
 %                 End
 %-------------------------------------------------%
